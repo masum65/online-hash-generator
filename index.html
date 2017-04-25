@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>
-		Hash Generator
+		Online Hash Generator
 	</title>
 	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" /> -->
 	<style type="text/css">
@@ -56,7 +56,7 @@
 					<div class="form-group">
 						<label for="">Plain Text</label>
 
-						<textarea id="input" rows="4" class="form-control input-lg"></textarea>
+						<textarea id="input" rows="4" required="required" placeholder="Enter plan text here" class="form-control input-lg"></textarea>
 					</div>
 
 
@@ -69,14 +69,14 @@
 				<div class="form-group">
 					<label for=""><span class="hash"></span> Hash Text</label>
 
-					<textarea id="output" style="border:0;box-shadow: none;"" rows="10" class="form-control input-lg" readonly></textarea>
+					<textarea placeholder="click button on left to generate hash for given plain text" id="output" style="border:0;box-shadow: none;"" rows="10" class="form-control input-lg" readonly></textarea>
 				</div>
 
 			</div>
 		</div>
 		<div id="info-section" class="row text-center" style="margin-top:50px;margin-bottom: 60px;">
 			<div class="col-md-12">
-				
+
 				<div class="panel hash-info MD5">
 					<div class="panel-body">
 						<h3>MD5</h3>
@@ -129,8 +129,8 @@
 		fun["RMD160"] =	new Hashes.RMD160;
 		$(function(){
 			$('#hash').on('change', function(){
+				// $('#output').val('');
 				$('.hash-info').hide();
-				console.log($(this).val());
 				$('#info-section').find('.'+$(this).val()).show();
 			})
 
